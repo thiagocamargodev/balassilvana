@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Produto - Balas de Coco</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .produto-container {
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 20px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+        }
+
+        .carrossel {
+            position: relative;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 40px rgba(62, 39, 35, 0.2);
+            width: 100%;
+            max-width: 450px; /* limite de largura do contêiner do carrossel */
+            height: 500px; /* padrão para telas menores */
+        }
+
+        .carrossel img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .carrossel-nav {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 10px;
+        }
+
+        .dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.5);
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .dot.active {
+            background: var(--gold);
+            width: 30px;
+            border-radius: 6px;
+        }
+
+        .produto-info h1 {
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 20px;
+        }
+
+        .produto-info h2 {
+            font-size: 1.3rem;
+            color: var(--secondary);
+            margin: 30px 0 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .produto-info p {
+            color: var(--dark);
+            line-height: 1.8;
+            margin-bottom: 20px;
+            opacity: 0.8;
+        }
+
+        .info-item {
+            background: var(--light);
+            padding: 15px;
+            border-radius: 10px;
+            margin-bottom: 15px;
+            border-left: 4px solid var(--gold);
+        }
+
+        .whatsapp-btn-produto {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            margin-top: 30px;
+            padding: 15px 40px;
+            background: linear-gradient(135deg, #25D366, #20BA5A);
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 8px 20px rgba(37, 211, 102, 0.3);
+        }
+
+        .whatsapp-btn-produto:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 30px rgba(37, 211, 102, 0.5);
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 600;
+            margin-bottom: 30px;
+            transition: all 0.3s ease;
+        }
+
+        .back-link:hover {
+            color: var(--gold);
+            transform: translateX(-5px);
+        }
+
+        /* Em telas grandes: forçar carrossel 450x450 e ajustar grid da página de produto */
+        @media (min-width: 960px) {
+            .produto-container {
+                max-width: 1000px; /* acomoda carrossel + coluna de info */
+                grid-template-columns: 450px 1fr; /* primeira coluna fixa para o carrossel */
+            }
+
+            .carrossel {
+                width: 450px;
+                height: 450px;
+                max-width: none;
+            }
+
+            .carrossel img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .produto-container {
+                grid-template-columns: 1fr;
+            }
+
+            .carrossel {
+                max-width: 100%;
+                height: 350px;
+            }
+
+            .produto-info h1 {
+                font-size: 1.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- NAVBAR -->
+    <nav class="navbar">
+        <div class="navbar-container">
+            <div class="logo">
+                <i class="fas fa-coconut"></i>
+                <span>Balas de Coco</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html#sobre">Sobre Nós</a></li>
+                <li><a href="index.html#catalogo">Catálogo</a></li>
+                <li><a href="index.html#contatos">Contatos</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container">
+        <a href="index.html" class="back-link">
+            <i class="fas fa-arrow-left"></i> Voltar ao Catálogo
+        </a>
+
+        <div class="produto-container">
+            <div class="carrossel">
+                <img id="carrossel-img" src="" alt="Produto">
+                <div class="carrossel-nav" id="carrossel-nav"></div>
+            </div>
+
+            <div class="produto-info">
+                <h1 id="produto-nome">Bala de Coco</h1>
+                <p id="produto-descricao">Descrição...</p>
+
+                <h2><i class="fas fa-leaf"></i> Ingredientes</h2>
+                <div class="info-item">
+                    <p id="produto-ingredientes">Ingredientes...</p>
+                </div>
+
+                <h2><i class="fas fa-tongue"></i> Sabor</h2>
+                <div class="info-item">
+                    <p id="produto-sabor">Sabor...</p>
+                </div>
+
+                <h2><i class="fas fa-box"></i> Embalagem</h2>
+                <div class="info-item">
+                    <p id="produto-embalagem">Embalagem...</p>
+                </div>
+
+                <h2><i class="fas fa-weight"></i> Pesos</h2>
+                <div class="info-item">
+                    <p id="produto-peso">Peso...</p>
+                </div>
+
+                <a href="https://wa.me/5535992445228" target="_blank" class="whatsapp-btn-produto">
+                    <i class="fab fa-whatsapp"></i> Entrar em contato via WhatsApp
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="footer" style="margin-top: 80px;">
+        <div class="container">
+            <p>&copy; 2024 Web Visions. Todos os direitos reservados.</p>
+            <!--<p>Feito com <i class="fas fa-heart"></i> e coco</p> -->
+        </div>
+    </footer>
+
+    <!-- incluir data.js para carregar dados sem servidor -->
+    <script src="data.js"></script>
+
+    <script>
+        let balasData = window.balasData || [];
+        let currentImageIndex = 0;
+
+        function loadProduto() {
+            try {
+                if (!Array.isArray(window.balasData) || !window.balasData.length) {
+                    console.error('Dados do produto não disponíveis.');
+                    return;
+                }
+                
+                const urlParams = new URLSearchParams(window.location.search);
+                const produtoId = parseInt(urlParams.get('id'), 10) || 0;
+                
+                const bala = window.balasData[produtoId];
+                if (bala) {
+                    mostrarProduto(bala);
+                } else {
+                    console.error('Produto não encontrado:', produtoId);
+                }
+            } catch (error) {
+                console.error('Erro ao carregar produto:', error);
+            }
+        }
+
+        function mostrarProduto(bala) {
+            document.getElementById('produto-nome').textContent = bala.nome;
+            document.getElementById('produto-descricao').textContent = bala.descricao;
+            document.getElementById('produto-ingredientes').textContent = bala.ingredientes;
+            document.getElementById('produto-sabor').textContent = bala.sabor;
+            document.getElementById('produto-embalagem').textContent = bala.embalagem;
+            document.getElementById('produto-peso').textContent = bala.peso;
+
+            const imagens = Array.isArray(bala.imagens) && bala.imagens.length ? bala.imagens : (bala.imagem ? [bala.imagem] : []);
+            const imgElem = document.getElementById('carrossel-img');
+            if (imagens.length) {
+                currentImageIndex = 0;
+                imgElem.src = imagens[currentImageIndex];
+            } else {
+                imgElem.src = '';
+            }
+
+            criarDots(imagens);
+        }
+
+        function criarDots(imagens) {
+            const nav = document.getElementById('carrossel-nav');
+            nav.innerHTML = '';
+            imagens.forEach((src, i) => {
+                const dot = document.createElement('div');
+                dot.className = `dot ${i === 0 ? 'active' : ''}`;
+                dot.title = `Imagem ${i + 1}`;
+                dot.addEventListener('click', () => mudarImagem(i, imagens));
+                nav.appendChild(dot);
+            });
+        }
+
+        function mudarImagem(index, imagens) {
+            currentImageIndex = index;
+            const img = document.getElementById('carrossel-img');
+            img.style.opacity = '0.6';
+            setTimeout(() => {
+                img.src = imagens[index];
+                img.style.opacity = '1';
+            }, 120);
+
+            document.querySelectorAll('.dot').forEach((dot, i) => {
+                dot.classList.toggle('active', i === index);
+            });
+        }
+
+        document.addEventListener('DOMContentLoaded', loadProduto);
+    </script>
+</body>
+</html>
