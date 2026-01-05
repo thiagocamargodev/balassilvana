@@ -52,7 +52,7 @@ window.balasData = [
     {
         "id": 7,
         "nome": "Coco Maracujá Gourmet",
-        "imagens": [""],
+        "imagens": ["images/balaMaracuja.jpg"],
         "descricao": "Bala de coco recheada com brigadeiro de maracujá, combinando a suavidade do coco com um recheio cremoso e levemente ácido. O sabor é equilibrado, tropical e marcante, trazendo uma doçura delicada com o toque fresco e vibrante do maracujá. Uma opção artesanal que conquista pela leveza e pelo contraste irresistível de sabores.",
         "ingredientes": "Leite de Coco, Açúcar, recheio de brigadeiro de maracujá.",
         "sabor": "Equilíbrio entre doçura e leve acidez",
@@ -92,7 +92,7 @@ window.balasData = [
     {
         "id": 11,
         "nome": "Coco Beijinho Gourmet",
-        "imagens": [""],
+        "imagens": ["images/balaBeijinho.jpg"],
         "descricao": "Bala de coco com recheio cremoso de beijinho, unindo a suavidade do coco a uma doçura clássica e aconchegante. A textura macia e o sabor delicado criam um doce simples, tradicional e irresistível.",
         "ingredientes": "Leite de Coco, Açúcar, recheio de brigadeiro de beijinho.",
         "sabor": "Doce suave com coco cremoso.",
