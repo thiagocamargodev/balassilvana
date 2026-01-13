@@ -92,7 +92,7 @@ window.balasData = [
     {
         "id": 11,
         "nome": "Coco Beijinho Gourmet",
-        "imagens": ["images/balaBeijinho.jpg"],
+        "imagens": ["images/balabeijinho.jpg"],
         "descricao": "Bala de coco com recheio cremoso de beijinho, unindo a suavidade do coco a uma doçura clássica e aconchegante. A textura macia e o sabor delicado criam um doce simples, tradicional e irresistível.",
         "ingredientes": "Leite de Coco, Açúcar, recheio de brigadeiro de beijinho.",
         "sabor": "Doce suave com coco cremoso.",
