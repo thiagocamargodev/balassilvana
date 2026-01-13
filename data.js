@@ -19,7 +19,7 @@ window.balasData = [
         "embalagem": "Pote Plástico transparente com logomarca",
         "peso": "250g, 500g e 1kg"
     },
-    {
+    /*{
         "id": 3,
         "nome": "Coco Chocolate",
         "imagens": [""],
@@ -38,7 +38,7 @@ window.balasData = [
         "sabor": "Coco e amendoim em perfeita harmonia",
         "embalagem": "Pote Plástico transparente com logomarca",
         "peso": "250g, 500g e 1kg"
-    },
+    },*/
     {
         "id": 6,
         "nome": "Coco Limão Gourmet",
@@ -72,7 +72,7 @@ window.balasData = [
     {
         "id": 9,
         "nome": "Coco Café Gourmet",
-        "imagens": [""],
+        "imagens": ["images/balaCafe.jpg"],
         "descricao": "Bala de coco com recheio cremoso de café, unindo a suavidade do doce com o sabor marcante e aromático do café, resultando em uma combinação elegante, intensa e irresistível.",
         "ingredientes": "Leite de Coco, Açúcar, recheio de brigadeiro de café",
         "sabor": "Café aromático com doçura delicada",
@@ -109,7 +109,7 @@ window.balasData = [
         "embalagem": "Pote Plástico transparente com logomarca",
         "peso": "250g, 500g e 1kg"      
     },
-     {
+    /*{
         "id": 13,
         "nome": "Coco Tradicional Gelado",
         "imagens": [""],
@@ -118,5 +118,5 @@ window.balasData = [
         "sabor": "Coco puro e suave.",
         "embalagem": "Pote Plástico transparente com logomarca",
         "peso": "250g, 500g e 1kg"      
-    }
+    }*/
 ];

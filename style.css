@@ -14,6 +14,25 @@
     --white: #FFFFFF;
 }
 
+/* ANIMAÇÕES */
+@keyframes clickableGlow {
+    0%, 100% {
+        box-shadow: 0 10px 30px rgba(62, 39, 35, 0.15);
+    }
+    50% {
+        box-shadow: 0 10px 40px rgba(212, 175, 55, 0.4), 0 0 20px rgba(212, 175, 55, 0.3);
+    }
+}
+
+@keyframes clickablePulse {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.02);
+    }
+}
+
 html {
     scroll-behavior: smooth;
 }
@@ -297,6 +316,7 @@ body {
     box-shadow: 0 10px 30px rgba(62, 39, 35, 0.15);
     transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     background: var(--white);
+    animation: clickableGlow 3s ease-in-out infinite, clickablePulse 3s ease-in-out infinite;
 }
 
 .card:hover {
